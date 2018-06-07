@@ -10,10 +10,12 @@ Feel free to hit me up on discord (FeralPigMan#0597) or twitter (@FeralPigMan) f
 
 **Planned Features**
 * Screen frame counter.
+* Skip weapon get and castle cutscenes.
 
 **Known issues**
 * When warping from weapon menu to stage select screen, the screen displays random sprites.
 * When warping from D4, the stage select menu can have a weird palette. This doesn't seem to happen on the top floor, but does on the bottom floor. This doesn't affect further gameplay as far as I'm aware of.
+* Beating a robot master blacks oit his portait, but you should still be able to reselect it, or select the corresponding castle stage.
 
 **Credits**
 * Huge shoutouts to Pinkus for giving me really helpful advice for starting out, as well as making the MM3 practice hack, without which I probably wouldn't have been able to accomplish anything.
