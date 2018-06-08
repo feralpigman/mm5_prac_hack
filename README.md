@@ -9,13 +9,15 @@ Feel free to hit me up on discord (FeralPigMan#0597) or twitter (@FeralPigMan) f
 * While in the weapon menu, hitting select returns to the stage select screen.
 
 **Planned Features**
-* Screen frame counter.
+* Screen and stage frame counter.
 * Skip weapon get and castle cutscenes.
+* Add full weapon ammo option, as well as beatless.
 
 **Known issues**
 * When warping from weapon menu to stage select screen, the screen displays random sprites.
-* When warping from D4, the stage select menu can have a weird palette. This doesn't seem to happen on the top floor, but does on the bottom floor. This doesn't affect further gameplay as far as I'm aware of.
-* Beating a robot master blacks oit his portait, but you should still be able to reselect it, or select the corresponding castle stage.
+* When warping from various stages, the stage select menu can have a weird palette. This doesn't seem to happen on the top floor, but does on the bottom floor. This doesn't affect further gameplay as far as I'm aware of. Seems to have something to do with vertical scrolling, since it happens in D4 and Gyro, also had it happen in gravity.
+* Beating a robot master blacks out his portait, but you should still be able to reselect it, or select the corresponding castle stage.
+* When entering star from another stage, mtank count and beat letters can be messed up.
 
 **Credits**
 * Huge shoutouts to Pinkus for giving me really helpful advice for starting out, as well as making the MM3 practice hack, without which I probably wouldn't have been able to accomplish anything.
