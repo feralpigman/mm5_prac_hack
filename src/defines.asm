@@ -1,11 +1,14 @@
 define org_switchbanks $FF43
 
-define timer_frames $41
-define timer_seconds $51
-
 // are these actually free?
-//define last_frames $900
-//define last_seconds $901
+define timer_frames $05D3
+define timer_seconds $05D4
+define last_frames $05D5
+define last_seconds $05D6
+define last_minutes $05D7
+define timer_minutes $05D8
 
-//define tmp1 $902
-//define tmp2 $903
+define tmp1 $05D9
+define tmp2 $05DA
+
+define boss_dead $05DB
