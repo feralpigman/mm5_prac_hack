@@ -12,3 +12,5 @@ define tmp1 $05D9
 define tmp2 $05DA
 
 define boss_dead $05DB
+
+define use_beat $05FC
