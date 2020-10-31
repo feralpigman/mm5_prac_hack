@@ -5,7 +5,7 @@ define timer_frames $05D3
 define timer_seconds $05D4
 define last_frames $05D5
 define last_seconds $05D6
-define last_minutes $05D7
+define show_timer_frames $05D7
 define timer_minutes $05D8
 
 define tmp1 $05D9

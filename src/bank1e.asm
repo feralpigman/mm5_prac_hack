@@ -10,7 +10,7 @@ org $CB96
 
 // hook into right transition
 org $CC11
-    JSR show_frame_counter // bank1f
+    //JSR show_frame_counter // bank1f
 
 // reset frame counter after right transition	
 org $CC41	
@@ -23,7 +23,7 @@ org $CC73
 
 // hook into left transition
 org $CCF2
-    JSR show_frame_counter // bank1f
+    //JSR show_frame_counter // bank1f
 
 // reset frame counter after left transition
 org $CCFB
@@ -45,8 +45,10 @@ org $CE90
 
 // hook into vertical transition
 org $CF16
-    JSR show_frame_counter // bank1f
+    //JSR show_frame_counter // bank1f
 
 // reset frame counter after vertical transition	
 org $CF39
     JSR reset_frame_counter.vert
+
+

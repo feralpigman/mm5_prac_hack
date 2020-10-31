@@ -1,5 +1,25 @@
 bank $1F
 
+// we need to make space for our JSR, so rewrite some lines
+org $E1F3
+	// this JSR saves 3 bits, which is exactly what we need
+	JSR quad_inx
+	BEQ $E1FF
+  dec_04:
+	DEC $04
+	BPL $E19F
+	JSR oam_hook
+	RTS
+
+org $E206
+	// overwrite to go to the new address, since making space above moved it
+	BNE dec_04 
+
+// music code, hook in to show timer on boss kill
+org $EC5D
+	JSR boss_kill_counter
+	NOP
+
 // forces game over when hitting a button in weapon menu
 org $F806
     PLA
@@ -49,6 +69,16 @@ store_frame_counter:
     // call original line
     JSR $C3B8
     PHA
+	// sets number of frames to show timer (60 frames)
+	LDA #$3C
+	JMP .store_timer_frames
+	// boss kill doesn't need to call the above line, it skips to here
+  .no_transition:
+    PHA
+	// sets number of frames to show timer (120 frames)
+	LDA #$78
+  .store_timer_frames:
+	STA {show_timer_frames}
     LDA {timer_frames}
     STA {last_frames}
     LDA {timer_seconds}
@@ -97,8 +127,9 @@ vertical_transition_spacemaker:
 // show frame counter
 org $F906
   show_frame_counter:
-    // original line
+    // original line for screen transition
     JSR $DF5E
+  .no_transition:
     PHA
 
 // Swaps in the CHR ROM with our counter digits in.
@@ -146,3 +177,32 @@ org $F9A0
     JSR reset_frame_counter.stage_start
     LDX #$FF
     RTS		
+  oam_hook:
+	PHA
+	LDA {show_timer_frames}
+	BEQ .oam_hook_done
+	DEC {show_timer_frames}
+	// show timer if show_timer_frames not 0
+	JSR show_frame_counter.no_transition
+
+	// original lines
+  .oam_hook_done:
+	PLA
+	RTS
+quad_inx:
+	INX
+	INX
+	INX
+	INX
+	STX $9F
+	RTS
+boss_kill_counter:
+	// 11 is the boss kill fanfare
+	CMP #$11
+	BNE after_boss_kill_counter
+	JSR store_frame_counter.no_transition
+  after_boss_kill_counter:
+	// original lines
+	STX $00
+	LDX $DA
+	RTS
