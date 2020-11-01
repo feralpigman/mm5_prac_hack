@@ -116,6 +116,37 @@ reset_frame_counter:
     PLA
   .done:
     RTS	
+ 
+ oam_hook:
+	PHA
+	LDA {show_timer_frames}
+	BEQ .oam_hook_done
+	DEC {show_timer_frames}
+	// show timer if show_timer_frames not 0
+	JSR show_frame_counter.no_transition
+
+	// original lines
+  .oam_hook_done:
+	PLA
+	RTS
+quad_inx:
+	INX
+	INX
+	INX
+	INX
+	STX $9F
+	RTS
+boss_kill_counter:
+	// 11 is the boss kill fanfare
+	CMP #$11
+	BNE after_boss_kill_counter
+	JSR store_frame_counter.no_transition
+  after_boss_kill_counter:
+	// original lines
+	STX $00
+	LDX $DA
+	RTS
+
 
 vertical_transition_spacemaker:
     LDA #$01
@@ -177,32 +208,3 @@ org $F9A0
     JSR reset_frame_counter.stage_start
     LDX #$FF
     RTS		
-  oam_hook:
-	PHA
-	LDA {show_timer_frames}
-	BEQ .oam_hook_done
-	DEC {show_timer_frames}
-	// show timer if show_timer_frames not 0
-	JSR show_frame_counter.no_transition
-
-	// original lines
-  .oam_hook_done:
-	PLA
-	RTS
-quad_inx:
-	INX
-	INX
-	INX
-	INX
-	STX $9F
-	RTS
-boss_kill_counter:
-	// 11 is the boss kill fanfare
-	CMP #$11
-	BNE after_boss_kill_counter
-	JSR store_frame_counter.no_transition
-  after_boss_kill_counter:
-	// original lines
-	STX $00
-	LDX $DA
-	RTS
