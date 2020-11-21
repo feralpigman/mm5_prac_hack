@@ -3,15 +3,6 @@ Practice hack for Megaman 5, version 1.5
 
 Feel free to hit me up on discord (FeralPigMan#0597) or twitter (@FeralPigMan) for desired features or any bugs you find.
 
-**Changelog**
-* V1.5
-	* Added timer for boss kills. This displays once the fanfare starts.
-	* Charge screen now show the timer for the rooms that go dark (although the timer doesn't show as long as other rooms)
-
-* V1.4
-	* Added beatless version to the main menu. This currently uses the same castle energy values as the beat version.
-	* Added ability to use M tank regardless of if you actually have an M tank in your inventory.
-
 **Features**
 * On the stage select screen, hitting A loads the appropriate robot master like normal. Hitting start will instead load the correspondingly numbered castle stage, from left to right, top to bottom (ie Stone Man is #1, loads D1. Charge Man is #4, loads D4. Skips center tile, so Napalm loads W1).
 * Loading a stage gives you the appropriate weapons, beat letters, and M tank. For the castle stages, it will give you the "correct" amount of ammo for each weapon also (ammo counts came from Beco's PB).
@@ -28,6 +19,18 @@ Feel free to hit me up on discord (FeralPigMan#0597) or twitter (@FeralPigMan) f
 * When warping from weapon menu to stage select screen, the screen displays random sprites.
 * When warping from various stages, the stage select menu can have a weird palette. This doesn't seem to happen on the top floor, but does on the bottom floor. This doesn't affect further gameplay as far as I'm aware of. Seems to have something to do with vertical scrolling, since it happens in D4 and Gyro, also had it happen in gravity.
 * Beating a robot master blacks out his portait, but you should still be able to reselect it, or select the corresponding castle stage.
+
+**Changelog**
+* V1.6
+	* Timer no longer flickers on screen transitions (still does for boss kills though)
+
+* V1.5
+	* Added timer for boss kills. This displays once the fanfare starts.
+	* Charge screen now show the timer for the rooms that go dark (although the timer doesn't show as long as other rooms)
+
+* V1.4
+	* Added beatless version to the main menu. This currently uses the same castle energy values as the beat version.
+	* Added ability to use M tank regardless of if you actually have an M tank in your inventory.
 
 **Credits**
 * Huge shoutouts to Pinkus for giving me really helpful advice for starting out, as well as making the MM3 practice hack, without which I probably wouldn't have been able to accomplish anything.
